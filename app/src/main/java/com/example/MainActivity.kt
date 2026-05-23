@@ -62,6 +62,9 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
+        // Start foreground service to keep reminders alive in background
+        com.example.reminders.ReminderForegroundService.start(this)
+
         // Handle initial notification extra parameter if launched via push trigger
         intent?.getStringExtra("EXTRA_REMINDER_TYPE")?.let { type ->
             viewModel.showReminderDialog(type)

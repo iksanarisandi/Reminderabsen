@@ -12,6 +12,10 @@ class BootReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
         if (intent.action == Intent.ACTION_BOOT_COMPLETED || intent.action == "android.intent.action.QUICKBOOT_POWERON") {
             Log.d("BootReceiver", "Boot completed. Restoring attendance alerts.")
+
+            // Start foreground service to keep reminders alive
+            ReminderForegroundService.start(context)
+
             val pendingResult = goAsync()
             val scope = CoroutineScope(Dispatchers.IO)
             scope.launch {
