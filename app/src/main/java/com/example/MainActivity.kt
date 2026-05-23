@@ -1026,7 +1026,7 @@ fun OnboardingSetupLayout(
 
     var clockInHourStart by remember { mutableStateOf(6) }
     var clockInMinuteStart by remember { mutableStateOf(0) }
-    var clockInHourEnd by remember { mutableStateOf(12) }
+    var clockInHourEnd by remember { mutableStateOf(14) }
     var clockInMinuteEnd by remember { mutableStateOf(0) }
     var clockInInterval by remember { mutableStateOf(5) }
 

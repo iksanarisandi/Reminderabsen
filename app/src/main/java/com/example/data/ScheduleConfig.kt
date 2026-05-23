@@ -10,7 +10,7 @@ data class ScheduleConfig(
     val activeDays: String = "Monday,Tuesday,Wednesday,Thursday,Friday", // comma separated
     val clockInStartHour: Int = 6,
     val clockInStartMinute: Int = 0,
-    val clockInEndHour: Int = 12,
+    val clockInEndHour: Int = 14,
     val clockInEndMinute: Int = 0,
     val clockInInterval: Int = 5, // in minutes
     val clockOutStartHour: Int = 16,
