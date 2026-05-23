@@ -1,0 +1,6 @@
+{
+  "name": "Attendance Reminder",
+  "description": "Clock-in and Clock-out reminder utility with custom repeatable schedules, snoozes, persistent center-popup alerts, and local daily logs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
