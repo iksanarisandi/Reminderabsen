@@ -110,7 +110,7 @@ fun MainAppScreen(viewModel: MainViewModel) {
                 .fillMaxSize()
                 .padding(innerPadding)
         ) {
-            if (config != null && !config!!.onboarded) {
+            if (config?.onboarded != true) {
                 // Onboarding Schedule Setup
                 OnboardingSetupLayout(
                     onSave = { activeDays, inS, inE, inInt, outS, outE, outInt ->
@@ -1023,18 +1023,18 @@ fun OnboardingSetupLayout(
     onSave: (String, String, String, Int, String, String, Int) -> Unit
 ) {
     var selectedDays by remember { mutableStateOf(setOf("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")) }
-    
-    var clockInHourStart by remember { mutableStateOf(7) }
-    var clockInMinuteStart by remember { mutableStateOf(30) }
-    var clockInHourEnd by remember { mutableStateOf(9) }
+
+    var clockInHourStart by remember { mutableStateOf(6) }
+    var clockInMinuteStart by remember { mutableStateOf(0) }
+    var clockInHourEnd by remember { mutableStateOf(12) }
     var clockInMinuteEnd by remember { mutableStateOf(0) }
-    var clockInInterval by remember { mutableStateOf(10) }
+    var clockInInterval by remember { mutableStateOf(5) }
 
     var clockOutHourStart by remember { mutableStateOf(16) }
     var clockOutMinuteStart by remember { mutableStateOf(0) }
-    var clockOutHourEnd by remember { mutableStateOf(18) }
+    var clockOutHourEnd by remember { mutableStateOf(23) }
     var clockOutMinuteEnd by remember { mutableStateOf(0) }
-    var clockOutInterval by remember { mutableStateOf(15) }
+    var clockOutInterval by remember { mutableStateOf(5) }
 
     LazyColumn(
         modifier = Modifier
